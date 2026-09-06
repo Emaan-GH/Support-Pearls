@@ -9,6 +9,11 @@ from src.chains.rag_chain import SupportPearlzRAG
 # Fix module import path
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
+
+# Is ke baad baaki imports aayein gi:
+from src.chains.rag_chain import SupportPearlzRAG
+
+
 # --------------------------------------------------
 # DATABASE SETUP (SQLite for Live Orders & Tickets)
 # --------------------------------------------------
