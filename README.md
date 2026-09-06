@@ -1,39 +1,48 @@
  Live Demo Link : https://markz-mind-pn.streamlit.app
  
- 🚀 Enterprise AI Agent Suite
+  SupportPearlz – AI Customer Support RAG Agent
 
-A comprehensive multi-agent platform featuring specialized AI workflows for Autonomous Business Intelligence and E-Commerce Customer Support Automation. Built with Streamlit, OpenAI, and custom Retrieval-Augmented Generation (RAG) pipelines.
-
----
-
- 📸 Suite Overview
-
-| Application | Primary Focus | Core Capabilities |
-| :--- | :--- | :--- |
-
-| SupportPearlz AI Engine | E-Commerce Support & Action Hub | Live Order Placement, Real-Time DB Tracking, RAG Knowledge Base |
+SupportPearlz is an advanced Retrieval-Augmented Generation (RAG) customer support assistant built using Python, LangChain, and Streamlit. The application ingests company knowledge base documents, indexes them into a persistent vector store, and provides grounded, citation-backed answers to customer queries in a multi-turn conversational interface.
 
 ---
 
-⚡ 1. MarketMind AI Engine
+🌟 Key Features
 
-MarketMind AI is an autonomous market research system designed to eliminate manual data gathering and hallucination risks in executive decision-making.
+* Multi-Format Document Ingestion: Supports indexing of heterogeneous source files (PDF, DOCX, Markdown, CSV, TXT).
+* Persistent Vector Index: Uses disk-persisted vector storage to avoid costly re-embedding on app restarts.
+* Semantic & Context-Aware Retrieval: Employs query condensation to handle follow-up questions and multi-turn context accurately.
+* Grounded Generation & Source Attribution: Generates answers using strictly retrieved contexts with explicit document citations and location metadata.
+* Strict Refusal & Safety Controls: Directs users to human support when queries fall outside the knowledge base or attempt prompt injection.
+* Structured Output Parsing: Validates response objects (answers, citations, confidence levels) using Pydantic schemas.
 
- 🔑 Key Features
-* Multi-Phase Planning Agent: Deconstructs complex research questions into structured execution phases.
-* Autonomous Tool Execution: Dynamically triggers search tools, web scrapers, and data extractors.
-* Evidence Verification & Quality Control Gate: Evaluates collected evidence to flag unverified claims, weak citations, or potential hallucinated data.
-* Real-Time Cost & Token Accounting: Tracks prompt tokens, completion tokens, and estimated USD expenditure per request.
-* Human-in-the-Loop Audit Gate: Allows reviewers to approve reports, request agent iterations, or reject outputs before deployment.
+---
 
-### 📁 Architecture & File Structure
+ 🛠️ Project Structure
 
+```text
 supportpearlz/
-├── app.py                  Main Streamlit interface & chat layout
-├── database/
-│   └── orders.db            SQLite database for order records
-├── rag/
-│   ├── retriever.py         Vector database retrieval engine
-│   └── embeddings.py        Knowledge base embedding generator
-└── utils/
-└── auth.py              API Key authentication guardrail
+├── README.md
+├── requirements.txt
+├── .env.example
+├── .gitignore
+├── data/
+│   ├── knowledge_base/       # Source documents (PDF, MD, CSV, etc.)
+│   └── vector_store/         # Persisted vector database (Git-ignored)
+├── src/
+│   ├── config.py             # Centralized settings and environment validation
+│   ├── ingestion/
+│   │   ├── loaders.py        # Dispatcher for multi-format document loading
+│   │   ├── chunking.py       # Text splitting configurations
+│   │   └── build_index.py    # CLI script to build or rebuild the vector index
+│   ├── retrieval/
+│   │   ├── vector_store.py   # Vector DB creation, persistence, and loading
+│   │   └── retriever.py      # Retriever setup and relevance threshold filtering
+│   ├── chains/
+│   │   ├── prompts.py        # System prompt templates and grounding rules
+│   │   ├── schemas.py        # Pydantic response models
+│   │   ├── memory.py         # Conversation history and query condensation
+│   │   └── rag_chain.py      # Main LCEL pipeline composition
+│   └── utils/
+│       └── logging_setup.py  # Centralized logging setup
+├── app.py                    # Streamlit web application interface
+└── app_cli.py                # Command-line interface for interactive chat
