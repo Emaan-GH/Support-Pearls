@@ -1,16 +1,32 @@
+ Live Demo Link : https://markz-mind-pn.streamlit.app
+ 
+ 🚀 Enterprise AI Agent Suite
+
+A comprehensive multi-agent platform featuring specialized AI workflows for Autonomous Business Intelligence and E-Commerce Customer Support Automation. Built with Streamlit, OpenAI, and custom Retrieval-Augmented Generation (RAG) pipelines.
+
 ---
 
- 🛍️ 2. SupportPearlz AI Engine
+ 📸 Suite Overview
 
-SupportPearlz is a modern, action-oriented support engine built to automate e-commerce customer service, inquiry resolution, and order execution.
+| Application | Primary Focus | Core Capabilities |
+| :--- | :--- | :--- |
+| MarketMind AI Engine | Enterprise Research & Analytics | Planning Agents, QC Auditing, Real-Time Token Cost Tracking |
+| SupportPearlz AI Engine | E-Commerce Support & Action Hub | Live Order Placement, Real-Time DB Tracking, RAG Knowledge Base |
+
+---
+
+⚡ 1. MarketMind AI Engine
+
+MarketMind AI is an autonomous market research system designed to eliminate manual data gathering and hallucination risks in executive decision-making.
 
  🔑 Key Features
-* Automated RAG Knowledge Base: Answers customer store inquiries instantly by retrieving relevant documentation using semantic vector search.
-* Live Order Placement: In-app interface allowing customer service representatives or users to generate new orders directly.
-* Real-Time Database Order Tracking: Instantly queries SQLite order databases using Order IDs (e.g., `ORD-1234`) to check shipment status.
-* Access Key Protection: Ensures workspace security with session-level API key authentication.
+* Multi-Phase Planning Agent: Deconstructs complex research questions into structured execution phases.
+* Autonomous Tool Execution: Dynamically triggers search tools, web scrapers, and data extractors.
+* Evidence Verification & Quality Control Gate: Evaluates collected evidence to flag unverified claims, weak citations, or potential hallucinated data.
+* Real-Time Cost & Token Accounting: Tracks prompt tokens, completion tokens, and estimated USD expenditure per request.
+* Human-in-the-Loop Audit Gate: Allows reviewers to approve reports, request agent iterations, or reject outputs before deployment.
 
- 📁 Architecture & File Structure
+### 📁 Architecture & File Structure
 
 supportpearlz/
 ├── app.py                  Main Streamlit interface & chat layout
