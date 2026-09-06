@@ -10,7 +10,7 @@ A comprehensive multi-agent platform featuring specialized AI workflows for Auto
 
 | Application | Primary Focus | Core Capabilities |
 | :--- | :--- | :--- |
-| MarketMind AI Engine | Enterprise Research & Analytics | Planning Agents, QC Auditing, Real-Time Token Cost Tracking |
+
 | SupportPearlz AI Engine | E-Commerce Support & Action Hub | Live Order Placement, Real-Time DB Tracking, RAG Knowledge Base |
 
 ---
